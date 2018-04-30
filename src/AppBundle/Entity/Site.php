@@ -32,6 +32,11 @@ class Site
      */
     private $departures;
 
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Flight", mappedBy="arrival")
+     */
+    private $arrivals;
+
 
     /**
      * @var int
@@ -247,5 +252,39 @@ class Site
     public function getDepartures()
     {
         return $this->departures;
+    }
+
+    /**
+     * Add arrival
+     *
+     * @param \AppBundle\Entity\Flight $arrival
+     *
+     * @return Site
+     */
+    public function addArrival(\AppBundle\Entity\Flight $arrival)
+    {
+        $this->arrivals[] = $arrival;
+
+        return $this;
+    }
+
+    /**
+     * Remove arrival
+     *
+     * @param \AppBundle\Entity\Flight $arrival
+     */
+    public function removeArrival(\AppBundle\Entity\Flight $arrival)
+    {
+        $this->arrivals->removeElement($arrival);
+    }
+
+    /**
+     * Get arrivals
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getArrivals()
+    {
+        return $this->arrivals;
     }
 }
