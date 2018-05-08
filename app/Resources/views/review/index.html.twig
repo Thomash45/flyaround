@@ -1,0 +1,44 @@
+
+
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <h1>Review</h1>
+
+    <table>
+        <tbody>
+        <tr>
+            <th>Review Number (id)</th>
+            <td>{{ review.id }}</td>
+        </tr>
+        <tr>
+            <th>Review text</th>
+            <td>{{ review.text }}</td>
+        </tr>
+        <tr>
+            <th>Publication date :</th>
+            <td>{{ review.publicationDate|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Note</th>
+            <td>{{ review.note }}</td>
+        </tr>
+        <tr>
+            <th>User_Rated</th>
+            <td>{{ review.userRated }}</td>
+        </tr>
+        <tr>
+            <th>Review's author</th>
+            <td>{{ review.reviewAuthor }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="/">Return to homepage</a>
+        </li>
+    </ul>
+{% endblock %}
+
