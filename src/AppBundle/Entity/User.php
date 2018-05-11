@@ -32,7 +32,7 @@ class User
     private $reviewAuthors;
 
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\User", mappedBy="pilot")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Flight", mappedBy="pilot")
      */
     private $pilots;
 
