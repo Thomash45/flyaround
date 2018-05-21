@@ -18,3 +18,4 @@
 /.idea
 .idea
 *.php~
+/node_modules/
